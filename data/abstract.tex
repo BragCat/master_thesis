@@ -1,0 +1,39 @@
+% !TeX root = ../main.tex
+
+% 中英文摘要和关键字
+
+\begin{abstract}
+    网络层源地址伪造是当今互联网面临的许多安全问题的根源所在，没有网络层源地址的真实性，网络攻击流量难以识别和阻截，对恶意用户的威慑机制难以建立。清华大学研究团队提出的SAVA为源地址伪造问题提供了体系化的解决方案，其中接入子网SAVI技术能够提供主机粒度的地址验证，是用户身份识别与溯源技术的基础，目前已在IETF完成了标准化并有设备厂商进行了实现支持。在此之上，在IPv6地址中嵌入用户信息实现地址与身份绑定的NIDTGA地址生成算法被提出，但其应用需要源地址验证技术的部署作为基础，并与认证手段和地址配置方式相结合，而实际接入子网存在复杂多样的组网选择，因此以其为基础的用户身份识别与溯源系统在具体网络中的设计、实现与大规模部署方案仍亟待研究。
+
+  本文针对上述问题，对基于源地址验证的用户身份识别与溯源技术进行了相关研究，主要贡献如下：
+  \begin{enumerate}[1{)}]
+    \item 针对接入子网存在设备陈旧、替换升级成本高等难以支持接入交换机SAVI全部署的场景，提出了基于VLAN划分的SAVI部署增强方案，在非理想的SAVI部署子网中实现主机粒度的源地址验证，为根据IPv6地址溯源用户身份提供基础。针对端到端验证思想的一类自治域间源地址验证方案中共有的单一故障点隐患，设计并实现了基于区块链的安全联盟增强方案RegChain，加强了对用户身份溯源系统所依赖的真实IPv6地址在自治域间的验证能力。
+
+    \item 针对用户身份识别与溯源技术由于复杂网络环境而导致的设计与实现困难，通过分析DHCPv6、SLAAC等多种地址配置方式，以及广泛使用的Web Portal、二层准入认证等用户认证手段，提出在各类网络接入场景下的用户身份识别与溯源系统设计方案，并分别进行了开发与部署，实现了对多种网络场景、全部用户设备的全面支持。对于最易推广的基于二层准入认证的系统，讨论了其在校园网中的部署方案，为后续在全国高校部署提供指南。
+    
+    \item 针对用户身份识别与溯源系统在大规模部署应用时的跨管理域溯源问题，提出了基于区块链的用户身份溯源系统设计方案NIDChain，使各组织密钥更新历史多副本地保存在每个区块链节点上，但将读取其他组织密钥历史的追溯权限高度集中，防止用户隐私泄露，在利用区块链保护数据不受篡改与溯源服务高可用的同时，实现了集中管理的多管理域用户身份溯源功能。
+  \end{enumerate}
+
+ 
+  % 关键词用“英文逗号”分隔
+  \thusetup{
+    keywords = {用户身份溯源, 源地址验证, IPv6, 安全性, 区块链},
+  }
+\end{abstract}
+
+\begin{abstract*}
+ Source IP address forgery is the root cause of many security problems in the Internet today. Without the authenticity of the source IP address, it is difficult to identify and block network attack traffic, and to establish a deterrent mechanism for malicious users. Tsinghua University research team proposed SAVA  to provide a systematic solution to the source address forgery problem. At access network level of SAVA, the SAVI technology can provide source address validation of host granularity, which is the basis of the user identification and traceability technology, and has been supported by several device manufacturers. An IPv6 address generation algorithm named NIDTGA is proposed then, which binds the IPv6 address and user identity by embedding user information into IPv6 address. Its application requires IPv6 source address validation technologies' deployement as basis, and also needs to cooperate with the authentication method and address configuration method of a specific network. But there are too many complicated access network environments, the design, implementation and large-scale deployment of user identification and traceability system, which adopts this IPv6 generation algorithm in real networks, are still urgently needed to be studied.
+
+  In view of the above problems, this thesis has carried out relevant research on the user identification and traceability system. The main contributions of this thesis are as follows:
+  \begin{enumerate}[1{)}]
+    \item In view of the scenario where the access networks have outdated equipments and high replacement or upgrade costs, which makes it difficult to support SAVI deployment on every access switch, an enhancement solution for SAVI deployment based on VLAN partitioning is proposed to achieve the source address validation of host granularity in the non-ideal SAVI deployment subnets, providing the basis for tracing user identities based on IPv6 addresses. In view of the single failure point problem shared in a class of inter-AS source address validation schemes based on the end-to-end verification idea, design and implement a blockchain-based security alliance enhancement solution named RegChain, which enhances the validation ability of inter-AS source addresses relied by the user identification and traceability technology.
+
+    \item Aiming at the design and implementation difficulties of user identification and traceability technology due to the complex network environments, by analyzing various address configuration methods such as DHCPv6 and SLAAC, as well as user access authentication methods such as Web Portal and link layer access authentication which are widely used in the real networks, propose the design schemes of the user identification and traceability systems in various scenarios, develop and deploy each one to achieve comprehensive support for multiple network scenarios and all user devices. For the most popularized system based on link layer access authentication, the deployment plan in the university campus network is discussed, which provides guidance for the subsequent deployments in the universities all over the country.
+
+    \item Aiming at the problem of cross-administrative user tracing in large-scale deployment of user identification and traceability systems, the NIDChain, a design scheme of the user traceability system based on the blockchain, is proposed. It saves the key update histories of each organization as multiple copies in the blockchain, but still ensures that the traceability authority is highly centralized, avoiding the leakage of user privacy and enabling centralized multi-domain user traceability while utilizing blockchain to protect data from tampering and achieve high availability of trace service.
+  \end{enumerate}
+
+  \thusetup{
+    keywords* = {User Identity Traceability, Source Address Validation, IPv6, Security, Blockchain},
+  }
+\end{abstract*}
